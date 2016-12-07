@@ -8,20 +8,23 @@ int log(const char* format, ...)
 	va_list args;
 	va_start(args, format);
 
-	vprintf(format, args);
+	int ret = vprintf(format, args);
 
 	va_end(args);
+	return ret;
 }
 
 int verbose(const char* format, ...)
 {
+	int ret = 0;
 	if(config::flags::verbose)
 	{
 		va_list args;
 		va_start(args, format);
 
-		vprintf(format, args);
+		ret = vprintf(format, args);
 
 		va_end(args);
 	}
+	return ret;
 }
