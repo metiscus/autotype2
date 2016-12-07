@@ -51,6 +51,7 @@ int main(int argc, char **argv)
 static void show_version()
 {
 	printf("%s version %d.%d\n", config::program_name, config::version_major, config::version_minor);
+	printf(config::copyright_string);
 	exit(0);
 }
 
