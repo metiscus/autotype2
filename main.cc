@@ -7,6 +7,8 @@
 #include "config.hpp"
 #include "getopt.h"
 
+void compile_types(std::list<std::string>);
+
 static void show_version();
 static void show_help();
 
@@ -29,7 +31,7 @@ int main(int argc, char **argv)
 				show_help();
 				break;
 			default:
-				return 1;
+				return error::bad_arguments;
 		}
 	}
 
@@ -38,8 +40,10 @@ int main(int argc, char **argv)
 	for(int file = optind; file != argc; ++file)
 	{
 		files.push_back(argv[file]);
-		verbose("Adding file '%s' for processing.", argv[file]);
+		verbose("Adding file '%s' for processing.\n", argv[file]);
 	}
+
+	compile_types(files);
 
 	return 0;
 }

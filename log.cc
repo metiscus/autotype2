@@ -28,3 +28,18 @@ int verbose(const char* format, ...)
 	}
 	return ret;
 }
+
+int developer(const char* format, ...)
+{
+	int ret = 0;
+	if(config::flags::developer_mode)
+	{
+		va_list args;
+		va_start(args, format);
+
+		ret = vprintf(format, args);
+
+		va_end(args);
+	}
+	return ret;
+}

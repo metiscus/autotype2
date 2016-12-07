@@ -1,0 +1,11 @@
+<xml>
+	<comment>This is a comment asdf</comment>
+	<comment></comment>
+	<class name="derp" base="asdf">
+		<comment>derp is used to transfer data from the frotz to the brotz</comment>
+		<function name="do_something" const="true" inline="false">
+			<parameter type="const std::string&" name="derp"/>
+		</function>
+		<member type="std::string" />
+	</class>
+</xml>

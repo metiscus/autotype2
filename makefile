@@ -10,6 +10,7 @@ SRC=\
 	config.cc\
 	main.cc\
 	log.cc\
+	compile.cc\
 
 OBJ=$(SRC:.cc=.o)
 
